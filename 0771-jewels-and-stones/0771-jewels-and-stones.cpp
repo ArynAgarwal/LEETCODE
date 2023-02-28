@@ -3,15 +3,10 @@ public:
     int numJewelsInStones(string jewels, string stones) {
         int m = stones.length();
         int n = jewels.length();
-        int count = 0;
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(jewels[j]==stones[i]){
-                    count++;
-                    break;
-                }
-            }
+        int cnt = 0;
+        for(int i=0;i<n;i++){
+            cnt+= count(stones.begin(),stones.end(),jewels[i]);
         }
-        return count;
+        return cnt;
     }
 };
